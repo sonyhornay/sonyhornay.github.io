@@ -1,0 +1,109 @@
+@import url(https://fonts.google);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: url('sony.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: rgba(255,255,255, .1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(100px);
+    border-bottom: 2px solid rgb(255,255,255, .2);
+    z-index: 100;
+}
+
+.header:hover::before{
+    left: 100%;
+}
+
+.logo {
+    color: #fff;
+    font-size: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: default;
+}
+
+.navbar a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 35px;
+    transition: .3s;
+}
+
+.navbar a:hover {
+    color: #f00;
+}
+
+#menu-icon {
+    font-size: 36px;
+    color: #fff;
+    display: none;
+}
+
+/* BREKPOINTS */
+@media (max-width: 992px) {
+    .header {
+        padding: 1.25rem 4%;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: fixed;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: .5rem 4%;
+        background: rgb(255,255,255, .1);
+        border-bottom: 2px solid rgb(255,255,255, .2);
+        backdrop-filter: blur(10px);
+        display: none;
+    }
+    .navbar.active {
+        display: block;
+    }
+
+    .navbar a {
+        display: block;
+        margin: 1.5rem 0;
+    }
+
+    .nav-bg {
+        position: fixed;
+        top: 11.8%;
+        left: 0;
+        width: 100%;
+        height: 295px;
+        background: rgb(255,255,255, .1);
+        border-bottom: 2px solid rgb(255,255,255, .2);
+        backdrop-filter: blur(10px);
+        z-index: 99;
+        display: none;
+    }
+.nav-bg.navbar.active {
+    display: block;
+}
+}
